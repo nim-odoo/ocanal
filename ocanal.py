@@ -38,8 +38,8 @@ for line in out.decode('utf-8').split('\n'):
 data_sorted = sorted(data.items(), key=operator.itemgetter(1))
 data_sorted.reverse()
 
-print('Total: {}'.format(sum(data.values())))
-print('{:40s}{}'.format('Module', 'Count'))
-print('{}'.format(45 * '-'))
+print('Total: {}, from {}, on branch {}\n'.format(sum(data.values()), args.date, args.branch))
+print('|{:40s}|{}|'.format('Module', 'Count'))
+print('|{}|{}|'.format(40 * '-', 5 * '-'))
 for module, count in data_sorted:
-    print('{:40s}{}'.format(module, count))
+    print('|{:40s}|{:5d}|'.format(module, count))
